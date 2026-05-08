@@ -566,11 +566,6 @@ section h2 {
   aspect-ratio: 16/10;
   overflow: hidden;
 }
-.gallery-item.large {
-  grid-column: span 2;
-  grid-row: span 2;
-  aspect-ratio: auto;
-}
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -846,7 +841,6 @@ footer {
   .press-header .section-desc { margin-bottom: 0; }
 
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item.large { grid-column: span 2; }
   .gallery-meta { max-width: calc(100% - 110px); }
   .gallery-download { top: 0.6rem; right: 0.6rem; padding: 6px 11px; font-size: 10px; gap: 4px; }
   .gallery-download svg { width: 12px; height: 12px; }
@@ -859,6 +853,5 @@ footer {
 
 @media (max-width: 480px) {
   .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item.large { grid-column: span 1; }
   .hero-badge { font-size: 9px; letter-spacing: 2px; padding: 6px 16px; }
 }
