@@ -68,24 +68,27 @@
   </div>
 </header>
 
-<!-- FEATURED MIX -->
+<!-- FEATURED PLAYER -->
 <section id="featured">
   <div class="container">
     <div class="featured-header">
-      <span class="section-label">Featured Mix</span>
-      <h2>Coffee, Brunch &amp; R&amp;B</h2>
-      <p class="featured-desc">A 58-minute open-format set — soulful R&amp;B, neo-soul, and Sunday-morning hip hop. Press play and let it ride.</p>
+      <span class="section-label">Listen</span>
+      <h2>Press Play</h2>
+      <p class="featured-desc">Open-format sets — soulful R&amp;B, neo-soul, and championship-grade turntablism. Streaming live from SoundCloud.</p>
     </div>
-    <div class="featured-player" data-video="PLYHfSUo6mc" role="button" tabindex="0" aria-label="Play Coffee, Brunch and R&amp;B mix">
-      <img src="images/mix-coffee-brunch.jpg" alt="" class="featured-poster">
-      <div class="featured-play">
-        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-        <span>Play Mix · 58:13</span>
-      </div>
+    <div class="featured-player">
+      <iframe
+        width="100%"
+        height="450"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        title="DJ DPAK on SoundCloud"
+        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F190035660&color=%23d4af37&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
     </div>
     <div class="featured-actions">
-      <a href="https://www.youtube.com/watch?v=PLYHfSUo6mc" target="_blank" rel="noopener" class="btn-outline">Watch on YouTube</a>
-      <a href="#mixes" class="btn-link">Browse all mixes</a>
+      <a href="https://soundcloud.com/dj-dpak-357685014" target="_blank" rel="noopener" class="btn-outline">Follow on SoundCloud</a>
+      <a href="#mixes" class="btn-link">More mixes</a>
     </div>
   </div>
 </section>
@@ -468,25 +471,6 @@ document.querySelectorAll('section, .mix-card, .event-item, .achievement').forEa
   observer.observe(el);
 });
 
-// Featured mix: swap poster for YouTube iframe on click
-const featuredPlayer = document.querySelector('.featured-player');
-if (featuredPlayer) {
-  const loadFeatured = () => {
-    const id = featuredPlayer.dataset.video;
-    if (!id || featuredPlayer.dataset.loaded) return;
-    featuredPlayer.dataset.loaded = '1';
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&modestbranding=1&rel=0&playsinline=1`;
-    iframe.title = 'DJ DPAK featured mix';
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-    iframe.setAttribute('allowfullscreen', '');
-    featuredPlayer.replaceChildren(iframe);
-  };
-  featuredPlayer.addEventListener('click', loadFeatured);
-  featuredPlayer.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadFeatured(); }
-  });
-}
 </script>
 </body>
 </html>
