@@ -286,7 +286,7 @@ nav.scrolled {
    SECTIONS
    ======================================== */
 section {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   border-bottom: 1px solid var(--border);
 }
 .section-label {
@@ -309,7 +309,7 @@ section h2 {
   font-size: 15px;
   max-width: 600px;
   line-height: 1.7;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* ========================================
@@ -630,7 +630,7 @@ a.gallery-overlay {
 #booking {
   background: linear-gradient(135deg, var(--bg) 0%, var(--navy) 100%);
   border-bottom: none;
-  padding: 7rem 0 5rem;
+  padding: 4.5rem 0 3.5rem;
 }
 .booking-layout {
   display: grid;
@@ -835,7 +835,7 @@ footer {
    FEATURED MIX
    ======================================== */
 #featured {
-  padding: 5rem 0 4rem;
+  padding: 4rem 0 3rem;
   background:
     radial-gradient(ellipse at top, rgba(212,175,55,0.06) 0%, transparent 60%),
     var(--bg);
