@@ -476,7 +476,7 @@ if (featuredPlayer) {
     if (!id || featuredPlayer.dataset.loaded) return;
     featuredPlayer.dataset.loaded = '1';
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&modestbranding=1&rel=0`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&modestbranding=1&rel=0&playsinline=1`;
     iframe.title = 'DJ DPAK featured mix';
     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
     iframe.setAttribute('allowfullscreen', '');
