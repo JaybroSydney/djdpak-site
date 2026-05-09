@@ -68,6 +68,28 @@
   </div>
 </header>
 
+<!-- FEATURED MIX -->
+<section id="featured">
+  <div class="container">
+    <div class="featured-header">
+      <span class="section-label">Featured Mix</span>
+      <h2>Coffee, Brunch &amp; R&amp;B</h2>
+      <p class="featured-desc">A 58-minute open-format set — soulful R&amp;B, neo-soul, and Sunday-morning hip hop. Press play and let it ride.</p>
+    </div>
+    <div class="featured-player" data-video="PLYHfSUo6mc" role="button" tabindex="0" aria-label="Play Coffee, Brunch and R&amp;B mix">
+      <img src="images/mix-coffee-brunch.jpg" alt="" class="featured-poster">
+      <div class="featured-play">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        <span>Play Mix · 58:13</span>
+      </div>
+    </div>
+    <div class="featured-actions">
+      <a href="https://www.youtube.com/watch?v=PLYHfSUo6mc" target="_blank" rel="noopener" class="btn-outline">Watch on YouTube</a>
+      <a href="#mixes" class="btn-link">Browse all mixes</a>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
@@ -445,6 +467,26 @@ document.querySelectorAll('section, .mix-card, .event-item, .achievement').forEa
   el.classList.add('reveal');
   observer.observe(el);
 });
+
+// Featured mix: swap poster for YouTube iframe on click
+const featuredPlayer = document.querySelector('.featured-player');
+if (featuredPlayer) {
+  const loadFeatured = () => {
+    const id = featuredPlayer.dataset.video;
+    if (!id || featuredPlayer.dataset.loaded) return;
+    featuredPlayer.dataset.loaded = '1';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&modestbranding=1&rel=0`;
+    iframe.title = 'DJ DPAK featured mix';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('allowfullscreen', '');
+    featuredPlayer.replaceChildren(iframe);
+  };
+  featuredPlayer.addEventListener('click', loadFeatured);
+  featuredPlayer.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadFeatured(); }
+  });
+}
 </script>
 </body>
 </html>
